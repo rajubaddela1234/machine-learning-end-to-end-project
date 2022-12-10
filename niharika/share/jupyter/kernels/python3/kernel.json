@@ -1,0 +1,14 @@
+{
+ "argv": [
+  "c:/Users/HP/Downloads/deployment/machine-learning-end-to-end-project/niharika\\python.exe",
+  "-m",
+  "ipykernel_launcher",
+  "-f",
+  "{connection_file}"
+ ],
+ "display_name": "Python 3 (ipykernel)",
+ "language": "python",
+ "metadata": {
+  "debugger": true
+ }
+}
