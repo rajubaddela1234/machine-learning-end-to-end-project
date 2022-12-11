@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Boston House Price Prediction</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+      <input type="text" name="OverallQual" placeholder="OverallQual" required="required" /><br>
+      <input type="text" name="GarageCars" placeholder="GarageCars" required="required" /><br>
+      <select name="ExterQual" id="ExterQual" required="required">
+        <option value="Gd">Gd</option>
+        <option value="TA">TA</option>
+        <option value="Ex">Ex</option>
+        <option value="Fa">Fa</option>
+      </select>
+      <br>
+      <select name="Neighborhood" id="Neighborhood" required="required">
+        <option value="CollgCr">Collgcr</option>
+        <option value="Veenker">Veenker</option>
+        <option value="Crawfor">Crawfor</option>
+        <option value="NoRidge">NoRidge</option>
+        <option value="Mitchel">Mitchel</option>
+        <option value="Somerst">Somerst</option>
+        <option value="NWAmes">NWAmes</option>
+        <option value="OldTown">OldTown</option>
+        <option value="BrkSide">BrkSide</option>
+        <option value="Sawyer">Sawyer</option>
+        <option value="NridgHt">NridgHt</option>
+        <option value="NAmes">NAmes</option>
+        <option value="SawyerW">SawyerW</option>
+        <option value="IDOTRR">IDOTRR</option>
+        <option value="MeadowV">MeadowV</option>
+        <option value="Edwards">Edwards</option>
+        <option value="Timber">Timber</option>
+        <option value="Gilbert">Gilbert</option>
+        <option value="StoneBr">StoneBr</option>
+        <option value="ClearCr">ClearCr</option>
+        <option value="NPkVill">NPKVill</option>
+        <option value="Blmngtn">Blmngtn</option>
+        <option value="BrDale">BrDale</option>
+        <option value="SWISU">SWISU</option>
+        <option value="Blueste">Blueste</option>
+      </select>
+        <br>
+      <input type="text" name="GrLivArea" placeholder="GrLivArea" required="required" /><br>
+      <select name="KitchenQual" id="KitchenQual" required="required">
+        <option value="Gd">Gd</option>
+        <option value="TA">TA</option>
+        <option value="Ex">Ex</option>
+        <option value="Fa">Fa</option>
+      </select>
+      <br>
+      
+      <select name="BsmtQual" id="BsmtQual" required="required">
+        <option value="Gd">Gd</option>
+        <option value="TA">TA</option>
+        <option value="Ex">Ex</option>
+        <option value="Fa">Fa</option>
+        <option value="Missing">Missing</option>
+      </select>
+      <br>
+      <input type="text" name="FullBath" placeholder="FullBath" required="required" /><br>
+      <input type="text" name="1stFlrSF" placeholder="1stFlrSF" required="required" /><br>
+      <input type="text" name="TotalBsmtSF" placeholder="TotalBsmtSF" required="required" /><br>
+
+      <input type="text" name="2ndFlrSF" placeholder="2ndFlrSF" required="required" /><br>
+      <select name="FireplaceQu" id="FireplaceQu" required="required">
+        <option value="Gd">Gd</option>
+        <option value="TA">TA</option>
+        <option value="Ex">Ex</option>
+        <option value="Fa">Fa</option>
+      </select>
+      <br>
+      <input type="text" name="BsmtFinSF1" placeholder="BsmtFinSF1" required="required" /><br>
+      <input type="text" name="YearBuilt" placeholder="YearBuilt" required="required" /><br>
+      <input type="text" name="GarageArea" placeholder="GarageArea" required="required" /><br>
+      <select name="GarageType" id="GarageType" required="required">
+        <option value="Attchd">Attchd</option>
+        <option value="Detchd">Detchd</option>
+        <option value="BuiltIn">BuiltIn</option>
+        <option value="CarPort">CarPort</option>
+        <option value="Basment">Basment</option>
+        <option value="Types">Types</option>
+      </select>
+      <br>
+      <input type="text" name="Fireplaces" placeholder="Fireplaces" required="required" /><br>
+      <input type="text" name="TotRmsAbvGrd" placeholder="TotRmsAbvGrd" required="required" /><br>
+      <input type="text" name="YearRemodAdd" placeholder="YearRemodAdd" required="required" /><br>
+      <input type="text" name="BedroomAbvGr" placeholder="BedroomAbvGr" required="required" /><br>
+
+      <input type="text" name="GarageYrBlt" placeholder="GarageYrBlt" required="required" /><br>
+      <select name="GarageFinish" id="GarageFinish" required="required">
+        <option value="RFn">RFn</option>
+        <option value="Unf">Unf</option>
+        <option value="Fin">Fin</option>
+      </select>
+      <br>
+      <input type="text" name="LotArea" placeholder="LotArea" required="required" /><br>
+      <select name="CentralAir" id="CentralAir" required="required">
+        <option value="Y">Y</option>
+        <option value="N">N</option>
+      </select>
+      <br>
+      <input type="text" name="BsmtFullBath" placeholder="BsmtFullBath" required="required" /><br>
+      <input type="text" name="MasVnrArea" placeholder="MasVnrArea" required="required" /><br>
+      <select name="BsmtExposure" id="BsmtExposure" required="required">
+        <option value="No">No</option>
+        <option value="Gd">Gd</option>
+        <option value="Mn">Mn</option>
+        <option value="Av">Av</option>
+      </select>
+      <br>
+      <input type="text" name="OverallCond" placeholder="OverallCond" required="required" /><br>
+      <input type="text" name="WoodDeckSF" placeholder="WoodDeckSF" required="required" /><br>
+      <select name="MSZoning" id="MSZoning" required="required">
+        <option value="RL">RL</option>
+        <option value="RM">RM</option>
+        <option value="C">C</option>
+        <option value="FV">FV</option>
+        <option value="RH">RH</option>
+      </select>
+      <br>
+
+      <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+  
+   
+ </div>
+ {{prediction_text}}
+
+</body>
+</html>
