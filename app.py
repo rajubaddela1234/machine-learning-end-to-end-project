@@ -23,86 +23,86 @@ def predict():
 
         ExterQual=request.form["ExterQual"]
         if(ExterQual=='Fa'):
-            Fa=0
+            ExterQual=0
         elif(ExterQual=="TA"):
-            TA=1
+            ExterQual=1
         elif(ExterQual=="Gd"):
-            Gd=2
+            ExterQual=2
         else:
-            EX=3
+            ExterQual=3
         
         Neighborhood=request.form["Neighborhood"]
         if(Neighborhood=="MeadowV"):
-            MeadowV=0
+            Neighborhood=0
         elif(Neighborhood=="IDOTRR"):
-            IDOTRR=1
+            Neighborhood=1
         elif(Neighborhood=="BrDale"):
-            BrDale=2
+            Neighborhood=2
         elif(Neighborhood=="BrkSide"):
-            BrkSide=3
+            Neighborhood=3
         elif(Neighborhood=="Edwards"):
-            Edwards=4
+            Neighborhood=4
         elif(Neighborhood=="OldTown"):
-            OldTown=5
+            Neighborhood=5
         elif(Neighborhood=="Sawyer"):
-            Sawyer=6
+            Neighborhood=6
         elif(Neighborhood=="Blueste"):
-            Blueste=7
+            Neighborhood=7
         elif(Neighborhood=="SWISU"):
-            SWISU=8
+            Neighborhood=8
         elif(Neighborhood=="NPkVill"):
-            NPkVill=9
+            Neighborhood=9
         elif(Neighborhood=="NAmes"):
-            NAmes=10
+            Neighborhood=10
         elif(Neighborhood=="Mitchel"):
-            Mitchel=11
+            Neighborhood=11
         elif(Neighborhood=="SawyerW"):
-            SawyerW=12
+            Neighborhood=12
         elif(Neighborhood=="NWAmes"):
-            NWAmes=13
+            Neighborhood=13
         elif(Neighborhood=="Gilbert"):
-            Gilbert=14
+            Neighborhood=14
         elif(Neighborhood=="Blmngtn"):
-            Blmngtn=15
+            Neighborhood=15
         elif(Neighborhood=="CollgCr"):
-            CollgCr=16
+            Neighborhood=16
         elif(Neighborhood=="Crawfor"):
-            Crawfor=17
+            Neighborhood=17
         elif(Neighborhood=="ClearCr"):
-            ClearCr=18
+            Neighborhood=18
         elif(Neighborhood=="Somerst"):
-            Somerst=19
+            Neighborhood=19
         elif(Neighborhood=="Veenker"):
-            Veenker=20
+            Neighborhood=20
         elif(Neighborhood=="Timber"):
-            Timber=21
+            Neighborhood=21
         elif(Neighborhood=="StoneBr"):
-            StoneBr=22
+            Neighborhood=22
         elif(Neighborhood=="NridgHt"):
-            NridgHt=23
+            Neighborhood=23
         else:
-            NoRidge=24
+            Neighborhood=24
         GrLivArea=int(request.form["GrLivArea"])
         KitchenQual=request.form["KitchenQual"]
         if(KitchenQual=="Fa"):
-            Fa=0
+            KitchenQual=0
         elif(KitchenQual=="TA"):
-            TA=1
+            KitchenQual=1
         elif(KitchenQual=="Gd"):
-            Gd=2
+            KitchenQual=2
         else:
-            Ex=3
+            KitchenQual=3
         BsmtQual=request.form["BsmtQual"]
         if(BsmtQual=="Missing"):
-            Missing=0
+            BsmtQual=0
         elif(BsmtQual=="Fa"):
-            Fa=1
+            BsmtQual=1
         elif(BsmtQual=="TA"):
-            TA=2
+            BsmtQual=2
         elif(BsmtQual=="Gd"):
-            Gd=3
+            BsmtQual=3
         else:
-            Ex=4
+            BsmtQual=4
         FullBath=int(request.form["FullBath"])
         stFlrSF=int(request.form["1stFlrSF"])
         TotalBsmtSF=int(request.form["TotalBsmtSF"])
@@ -110,35 +110,35 @@ def predict():
         ndFlrSF=int(request.form['2ndFlrSF'])
         FireplaceQu=request.form["FireplaceQu"]
         if(FireplaceQu=="Po"):
-            Po=0
+            FireplaceQu=0
         elif(FireplaceQu=="Missing"):
-            Missind=1
+            FireplaceQu=1
         elif(FireplaceQu=="Fa"):
-            Fa=2
+            FireplaceQu=2
         elif(FireplaceQu=="TA"):
-            TA=3
+            FireplaceQu=3
         elif(FireplaceQu=="Gd"):
-            Gd=4
+            FireplaceQu=4
         else:
-            Ex=5
+            FireplaceQu=5
         BsmtFinSF1=int(request.form["BsmtFinSF1"])
         YearBuilt=int(request.form["YearBuilt"])
         GarageArea=int(request.form["GarageArea"])
         GarageType=request.form["GarageType"]
         if(GarageType=="Missing"):
-            Missing=0
+            GarageType=0
         elif(GarageType=="CarPort"):
-            CarPort=1
+            GarageType=1
         elif(GarageType=="Detchd"):
-            Detchd=2
+            GarageType=2
         elif(GarageType=="Types"):
-            Types=3
+            GarageType=3
         elif(GarageType=="Basment"):
-            Basment=4
+            GarageType=4
         elif(GarageType=="Attchd"):
-            Attchd=5
+            GarageType=5
         else:
-            BuiltIn=6
+            GarageType=6
         Fireplaces=int(request.form["Fireplaces"])
         TotRmsAbvGrd=int(request.form["TotRmsAbvGrd"])
         YearRemodAdd=int(request.form["YearRemodAdd"])
@@ -148,45 +148,45 @@ def predict():
         GarageYrBlt=int(request.form["GarageYrBlt"])
         GarageFinish=request.form["GarageFinish"]
         if(GarageFinish=="Missing"):
-            Missing=0
+            GarageFinish=0
         elif(GarageFinish=="Unf"):
-            Unf=1
+            GarageFinish=1
         elif(GarageFinish=="RFn"):
-            RFn=2
+            GarageFinish=2
         else:
-            Fin=3
+            GarageFinish=3
         LotArea=int(request.form["LotArea"])
         CentralAir=request.form["CentralAir"]
         if(CentralAir=="N"):
-            N=0
+            CentralAir=0
         else:
-            Y=1
+            CentralAir=1
         BsmtFullBath=int(request.form['BsmtFullBath'])
         MasVnrArea=int(request.form["MasVnrArea"])
         BsmtExposure=request.form["BsmtExposure"]
         if(BsmtExposure=="Missing"):
-            Missing=0
+            BsmtExposure=0
         elif(BsmtExposure=="No"):
-            No=1
+            BsmtExposure=1
         elif(BsmtExposure=="Mn"):
-            Mn=2
+            BsmtExposure=2
         elif(BsmtExposure=="Av"):
-            Av=3
+            BsmtExposure=3
         else:
-            Gd=4
+            BsmtExposure=4
         OverallCond=int(request.form["OverallCond"])
         WoodDeckSF=int(request.form["WoodDeckSF"])
         MSZoning=request.form["MSZoning"]
         if(MSZoning=="C"):
-            C=0
+            MSZoning=0
         elif(MSZoning=="RM"):
-            RM=1
+            MSZoning=1
         elif(MSZoning=="RH"):
-            RH=2
+            MSZoning=2
         elif(MSZoning=="RL"):
-            RL=3
+            MSZoning=3
         else:
-            FV=4
+            MSZoning=4
         
         data=[[OverallQual,GarageCars,ExterQual,Neighborhood,GrLivArea,KitchenQual,BsmtQual,FullBath,stFlrSF,TotalBsmtSF,ndFlrSF,
         FireplaceQu,BsmtFinSF1,YearBuilt,GarageArea,GarageType,Fireplaces,TotRmsAbvGrd,YearRemodAdd,BedroomAbvGr,GarageYrBlt,GarageFinish,
@@ -198,7 +198,7 @@ def predict():
 
         return render_template('home.html',prediction_text="Your House price is Rs. {}".format(output))
                 
-    return render_template("home.html")
+    
 
 if __name__ == "__main__":
     app.run(debug=True)
