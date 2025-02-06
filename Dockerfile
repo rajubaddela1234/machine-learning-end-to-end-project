@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Use an official Python runtime as a parent image
 FROM python:3.9-slim
 
@@ -21,3 +22,10 @@ ENV FLASK_APP=app.py
 
 # Run app.py when the container launches
 CMD ["python", "app.py"]
+=======
+FROM python:3.7
+COPY . /app
+WORKDIR /app
+RUN pip install -r requirements.txt
+CMD python app.py
+>>>>>>> 1184c8f6d16cf3aac3a98ee781687df5f9df9aaa
