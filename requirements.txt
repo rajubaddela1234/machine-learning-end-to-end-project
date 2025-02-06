@@ -1,7 +1,10 @@
-flask
-sklearn
+Flask
+flask-cors
+mlflow
 pandas
 numpy
-seaborn
 matplotlib
+sklearn
+seaborn
 gunicorn
+scikit-learn
